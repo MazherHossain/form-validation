@@ -1,6 +1,9 @@
 ## Form validation with file uplaod 
 This is a tutorial for form validation with file uploading system. 
 
+
+## Form Isset with validation
+
 ```php
 /**
 		 * Student Data Form
@@ -31,7 +34,7 @@ This is a tutorial for form validation with file uploading system.
 			}
 
 
-## Form Isset with validation
+
 			
 			/**
 			 * Form validation 
