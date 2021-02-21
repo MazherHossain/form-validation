@@ -23,7 +23,7 @@
 			$cell = $_POST['cell'];
 			$roll = $_POST['roll'];
 
-
+ 
 			if( isset($email) ){				
 				// Check email 
 				$email_arr = explode('@', $email);
@@ -31,6 +31,9 @@
 
 			}
 			
+			// Cell manage
+			$cell_start = substr($cell, 0, 3);
+
 
 
 			if( empty($name) ){
@@ -55,7 +58,7 @@
 			/**
 			 * Form validation 
 			 */
-			if( empty($name) || empty($email) || empty($cell) || empty($roll)  ){
+			if( empty($email) || empty($roll)  ){
 					
 				$msg =  "<p class=\" alert alert-danger \"> All fields are required ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 
@@ -67,7 +70,10 @@
 				
 				$msg =  "<p class=\" alert alert-info \"> Email should be Our Institue email ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
 
-			} else {
+
+			}else if( in_array($cell_start, ['017','018','019','015','013','016','014']) == false ){
+				$msg =  "<p class=\" alert alert-danger \"> Mobile number is not correct ! <button class=\"close\" data-dismiss=\"alert\">&times;</button> </p>";
+			}else {
 
 				$msg =  "<p class=\" alert alert-success \">Data stable <button class=\"close\" data-dismiss=\"alert\">&times;</button></p>";
 
